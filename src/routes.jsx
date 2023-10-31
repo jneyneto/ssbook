@@ -10,7 +10,7 @@ export default function MyRoutes() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/Home" element={<Home />} />
-                <Route path="/Book" element={<Book />} />
+                <Route path="/Book/:id" element={<Book />} />
             </Routes>
         </ContextProvider>
     );

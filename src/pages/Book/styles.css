@@ -1,7 +1,233 @@
-.book-gradient {
-    width: 360px;
-    height: 153px;
-    flex-shrink: 0;
-    fill: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.00) 100%);
-    opacity: 0.7;
+.book {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    min-height: 100vh;
+    background: #F7F7F7;
+
+    overflow: hidden;
+}
+
+.book-body-background {
+    position: absolute;
+
+    width: calc(100vw / 2 + 500px);
+    height: calc(100vh - 240px);
+    top: 240px;
+    right: 0;
+
+    border-radius: 32px 0px 0px 32px;
+    background: #FFF;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.10);
+}
+
+.book-gradient-mobile {
+    display: none;
+}
+
+.book-gradient,
+.book-body {
+    z-index: 1;
+}
+
+.book-body {
+    display: flex;
+    flex-direction: row;
+
+    width: 1000px;
+    padding: 0 32px;
+    gap: 24px;
+
+}
+
+.book-body-section01 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.book-body-section01 img {
+    width: 296px;
+    height: 433px;
+    border-radius: 8px;
+}
+
+.book-body-section01 ul li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    height: 48px;
+    gap: 12px;
+
+    list-style-type: none;
+}
+
+.book-gradient-mobile img,
+.book-body-section01 ul li img {
+    width: 24px;
+    height: 24px;
+}
+
+.book-body-section01 ul li h3 {
+    color: #555;
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.book-body-section02-book {
+    height: 120px;
+    margin-bottom: 48px;
+    gap: 12px;
+}
+
+.book-body-section02-identification h1 {
+    color: #555;
+    font-family: Roboto;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.book-body-section02-identification img {
+    display: none;
+}
+
+.book-body-section02 h4 {
+    margin: 8px 0 20px;
+
+    color: #757575;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.book-body-section02 p {
+    color: #555;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 23px;
+}
+
+.book-body-section02-author h2 {
+    margin: 40px 0 24px;
+
+    color: #555;
+    font-family: Roboto;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+
+
+@media (max-width: 1000px) {
+    .book-gradient {
+        z-index: 2;
+
+    }
+
+    .book-gradient-desktop,
+    .book-body-section02-author,
+    .book-body-section01 ul,
+    .book-body-background {
+        display: none;
+    }
+
+    .book-gradient-mobile {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        width: 100vw;
+        height: 153px;
+        padding: 20px 20px 0 20px;
+        flex-shrink: 0;
+        background: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.00) 100%);
+        opacity: 0.7;
+    }
+
+    .book-body {
+        width: 100vw;
+        margin-top: 108px;
+        padding: 0;
+        gap: 0;
+    }
+
+    .book-body-section01 img {
+        position: absolute;
+        z-index: 0;
+
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 519px;
+        border-radius: 0px;
+    }
+
+    .book-body-section02-book {
+        height: 70px;
+        gap: 8px;
+    }
+
+    .book-body-section02 {
+        z-index: 2;
+
+        width: 100vw;
+        padding: 32px 20px 60px 20px;
+
+
+        border-radius: 32px 0px 0px 0px;
+        background: #FFF;
+        box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.05);
+    }
+
+    .book-body-section02-book {
+        display: flex;
+        flex-direction: column;
+
+        margin-bottom: 20px;
+        gap: 8px;
+    }
+
+    .book-body-section02-identification {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        height: 46px;
+
+    }
+
+    .book-body-section02-identification h1 {
+        width: 276px;
+
+        font-size: 20px;
+    }
+
+    .book-body-section02-book h4 {
+        margin: 0;
+    }
+
+    .book-body-section02-identification p {
+        font-size: 16px;
+    }
+
+    .book-body-section02-identification img {
+        display: block;
+    }
+
+
+
 }
