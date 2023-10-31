@@ -13,7 +13,7 @@
     position: absolute;
 
     width: calc(100vw / 2 + 500px);
-    height: calc(100vh - 240px);
+    height: calc(100% - 240px);
     top: 240px;
     right: 0;
 
@@ -38,12 +38,12 @@
     width: 1000px;
     padding: 0 32px;
     gap: 24px;
-
 }
 
 .book-body-section01 {
     display: flex;
     flex-direction: column;
+
     gap: 20px;
 }
 
@@ -77,6 +77,17 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+}
+
+.book-body-section02-book-description {
+    height: calc(100vh - 240px - 80px);
+    padding-bottom: 80px;
+
+    overflow: auto;
+}
+
+.book-body-section02-book-description::-webkit-scrollbar {
+    height: 6px;
 }
 
 .book-body-section02-book {
@@ -134,7 +145,6 @@
 @media (max-width: 1000px) {
     .book-gradient {
         z-index: 2;
-
     }
 
     .book-gradient-desktop,
@@ -152,6 +162,7 @@
         width: 100vw;
         height: 153px;
         padding: 20px 20px 0 20px;
+
         flex-shrink: 0;
         background: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.00) 100%);
         opacity: 0.7;
@@ -186,7 +197,6 @@
         width: 100vw;
         padding: 32px 20px 60px 20px;
 
-
         border-radius: 32px 0px 0px 0px;
         background: #FFF;
         box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.05);
@@ -207,7 +217,6 @@
         justify-content: space-between;
 
         height: 46px;
-
     }
 
     .book-body-section02-identification h1 {
@@ -220,6 +229,14 @@
         margin: 0;
     }
 
+    .book-body-section02-book-description {
+        height: auto;
+        padding-bottom: 20px;
+
+        overflow: unset;
+    }
+
+
     .book-body-section02-identification p {
         font-size: 16px;
     }
@@ -227,7 +244,4 @@
     .book-body-section02-identification img {
         display: block;
     }
-
-
-
 }

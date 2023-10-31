@@ -1,17 +1,17 @@
-import "./styles.css";
-import Header from "../../componennts/Header";
-import Footer from "../../componennts/Footer";
 import { gql, useQuery } from "@apollo/client";
-import { useParams } from "react-router-dom";
-import voltar from "../../assets/voltar.svg";
-import overflow from "../../assets/overflow.svg";
+import { useNavigate, useParams } from "react-router-dom";
 import compartilhar from "../../assets/Content.svg";
 import favoritar from "../../assets/favoritar-off.svg";
 import favorito from "../../assets/favorito.svg";
+import overflow from "../../assets/overflow.svg";
 import salvar from "../../assets/salvar.svg";
-
+import voltar from "../../assets/voltar.svg";
+import Footer from "../../componennts/Footer";
+import Header from "../../componennts/Header";
+import "./styles.css";
 
 export default function Book() {
+	const navigate = useNavigate();
 	const { id } = useParams();
 
 	const GET_BOOK = gql`
@@ -28,6 +28,7 @@ export default function Book() {
                 isFavorite
               }
             }`;
+
 	const { loading, error, data } = useQuery(GET_BOOK);
 
 	if (loading) return <p>Loading...</p>;
@@ -39,7 +40,11 @@ export default function Book() {
 			<div className="book-gradient">
 				<div className="book-gradient-desktop"><Header /></div>
 				<div className="book-gradient-mobile">
-					<img src={voltar} alt="Voltar" />
+					<img
+						src={voltar}
+						alt="Voltar"
+						onClick={() => { navigate(`/`) }}
+					/>
 					<img src={overflow} alt="Menu" />
 				</div>
 			</div>
@@ -69,10 +74,15 @@ export default function Book() {
 						</div>
 						<h4>{data.book.author.name}</h4>
 					</div>
-					<p>{data.book.description}</p>
-					<div className="book-body-section02-author">
-						<h2>Sobre o Autor</h2>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime dolore numquam labore non quam mollitia quos dolorem excepturi eaque assumenda similique vero laboriosam perferendis eligendi, enim illo, voluptatibus hic officia.</p>
+					<div className="book-body-section02-book-description">
+						<p>{data.book.description}</p>
+						<div className="book-body-section02-author">
+							<h2>Sobre o Autor</h2>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+								Maxime dolore numquam labore non quam mollitia quos dolorem
+								excepturi eaque assumenda similique vero laboriosam perferendis
+								eligendi, enim illo, voluptatibus hic officia.</p>
+						</div>
 					</div>
 				</section>
 			</div>

@@ -1,16 +1,19 @@
-import { gql, useQuery } from '@apollo/client';
+import { gql, useQuery } from "@apollo/client";
+import { useNavigate } from "react-router-dom";
 import add from "../../assets/add.svg";
 import favorito from "../../assets/favorito.svg";
 import logo from "../../assets/logo.svg";
 import lupa from "../../assets/lupa.svg";
-import './styles.css';
-
+import "./styles.css";
 
 export default function Header() {
+	const navigate = useNavigate();
+
 	const GET_AVATAR = gql`
     query {
-        userPicture
+      userPicture
     }`;
+
 	const { loading, error, data } = useQuery(GET_AVATAR);
 
 	if (loading) return <p>Loading...</p>;
@@ -20,7 +23,12 @@ export default function Header() {
 		<div className="header">
 			<div className="header-align">
 				<div className="header-body">
-					<img className="header-logo" src={logo} alt="Logo" />
+					<img
+						className="header-logo"
+						src={logo}
+						alt="Logo"
+						onClick={() => { navigate(`/`) }}
+					/>
 					<div className="header-search">
 						<input type="text" placeholder="Busque um livro" />
 						<img src={lupa} alt="Pesquisar" />

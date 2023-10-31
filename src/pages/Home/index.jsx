@@ -1,9 +1,9 @@
-import "./styles.css";
-import Header from "../../componennts/Header";
-import Footer from "../../componennts/Footer";
-import FavoriteBook from "../../componennts/FavoriteBook";
 import FavoriteAuthor from "../../componennts/FavoriteAuthor";
+import FavoriteBook from "../../componennts/FavoriteBook";
+import Footer from "../../componennts/Footer";
+import Header from "../../componennts/Header";
 import Library from "../../componennts/Library";
+import "./styles.css";
 
 export default function Home() {
   return (
@@ -59,7 +59,6 @@ export default function Home() {
         </div>
       </div>
       <Footer />
-
     </div>
   );
 }

@@ -1,9 +1,9 @@
-import { useQuery, gql } from '@apollo/client';
-import { useEffect, useState } from 'react';
-import "./styles.css"
-
+import { gql, useQuery } from "@apollo/client";
+import { useNavigate } from "react-router-dom";
+import "./styles.css";
 
 export default function FavoriteBook() {
+	const navigate = useNavigate();
 
 	const GET_FAVORITE_BOOKS = gql`
 		query {
@@ -24,13 +24,16 @@ export default function FavoriteBook() {
 
 	return (
 		<div className="favoriteBook">{data.favoriteBooks.map(book => (
-
-			<div className="favoriteBook-book" key={book.id}>
+			<div
+				className="favoriteBook-book"
+				onClick={() => { navigate(`/book/${book.id}`) }}
+				key={book.id}
+			>
 				<img src={`${book.cover}`} alt={`Capa de ${book.name}`} />
 				<h3>{book.name}</h3>
 				<p>{book.author.name}</p>
 			</div>
-
-		))}</div>
+		))}
+		</div>
 	);
 }
