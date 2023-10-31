@@ -1,0 +1,47 @@
+.favoriteBook {
+    display: flex;
+    flex-direction: row;
+
+    gap: 20px;
+
+    overflow: auto;
+}
+
+.favoriteBook::-webkit-scrollbar {
+    width: 6px;
+}
+
+.favoriteBook-book {
+    width: 136px;
+    height: 262px;
+}
+
+.favoriteBook-book img {
+    width: 136px;
+    height: 198px;
+    border-radius: 8px;
+}
+
+.favoriteBook-book h3 {
+    width: 136px;
+    height: 36px;
+
+    overflow: hidden;
+    color: #555;
+    text-overflow: ellipsis;
+    white-space: wrap;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+}
+
+.favoriteBook-book p {
+    color: #757575;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}

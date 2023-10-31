@@ -1,0 +1,63 @@
+.favoriteauthor {
+    display: flex;
+    flex-direction: row;
+
+    gap: 24px;
+
+    overflow: auto;
+}
+
+.favoriteauthor-author {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 296px;
+    gap: 16px;
+    border-radius: 8px;
+    border: 1px solid #E0E0E0;
+}
+
+.favoriteauthor-author img {
+    width: 68px;
+    height: 68px;
+    border-radius: 8px;
+}
+
+.favoriteauthor-description {
+    width: 161px;
+    height: 39px;
+    gap: 5px;
+}
+
+.favoriteauthor-description h3 {
+    overflow: hidden;
+    color: #555;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+}
+
+.favoriteauthor-description p {
+    color: #757575;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+@media (max-width: 1000px) {
+    .favoriteauthor-author {
+        min-width: 248px;
+    }
+
+    .favoriteauthor-author img {
+        width: 63px;
+        height: 67px;
+        border-radius: 8px;
+    }
+}

@@ -1,0 +1,53 @@
+.library {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    gap: 24px;
+}
+
+.library-book {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 296px;
+    height: 100px;
+    gap: 16px;
+}
+
+.library-book img {
+    width: 68px;
+    height: 100px;
+    border-radius: 8px;
+}
+
+.library-book h3 {
+    color: #555;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+}
+
+.library-book p {
+    color: #757575;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+@media (max-width: 1000px) {
+    .library-book {
+        width: 320px;
+        height: 70px;
+    }
+
+    .library-book img {
+        width: 48px;
+        height: 70px;
+        border-radius: 8px;
+    }
+}
